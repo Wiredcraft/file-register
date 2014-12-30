@@ -1,4 +1,4 @@
-debug = require('debug')('carcass:register')
+debug = require('debug')('carcass:fileRegister')
 
 fs = require('fs')
 path = require('path')

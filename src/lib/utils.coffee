@@ -8,10 +8,6 @@ isPrimitive = (value) ->
     return (not value?) or (value is true) or (value is false) or
         (typeof value is 'string') or (typeof value is 'number')
 
-# Copied from bluebird.
-isObject = (value) ->
-    return not isPrimitive(value)
-
 ###*
  * Defines a getter, which is simply a require().
  *
@@ -61,7 +57,6 @@ walk = (leaf, dir, name) ->
 
 module.exports = {
     isPrimitive: isPrimitive
-    isObject: isObject
     defineGetter: defineGetter
     walk: walk
 }

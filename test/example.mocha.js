@@ -106,3 +106,56 @@ describe('Register one thing and put it in lib:', function() {
     });
 
 });
+
+describe('Extend with another register:', function() {
+
+    it('should work', function() {
+        var example = new Register();
+        var another = new Register();
+        another.register(path.resolve(__dirname, 'example/lib'));
+
+        // Say example already has something.
+        example.models = {
+            Data: function() {}
+        };
+
+        // Extend.
+        example.extend(another);
+
+        // Now it has everything another has.
+        example.should.be.type('object');
+        example.should.have.property('models').with.type('object');
+        example.models.should.have.property('Data').with.type('function');
+        example.models.should.have.property('User').with.type('function');
+        example.should.have.property('views').with.type('string');
+        example.should.have.property('utils').with.type('object');
+        example.utils.should.have.property('lorem').with.type('function');
+    });
+
+});
+
+describe('Selectively extend with another register:', function() {
+
+    it('should work', function() {
+        var example = new Register();
+        var another = new Register();
+        another.register(path.resolve(__dirname, 'example/lib'));
+
+        // Say example already has something.
+        example.models = {
+            Data: function() {}
+        };
+
+        // Extend.
+        example.extend(another, 'models');
+
+        // Now it has everything another has.
+        example.should.be.type('object');
+        example.should.have.property('models').with.type('object');
+        example.models.should.have.property('Data').with.type('function');
+        example.models.should.have.property('User').with.type('function');
+        example.should.not.have.property('views');
+        example.should.not.have.property('utils');
+    });
+
+});

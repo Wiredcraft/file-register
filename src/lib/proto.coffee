@@ -1,7 +1,7 @@
 fs = require('fs')
 path = require('path')
-mixin = require('mixable-object').mixin
 utils = require('./utils')
+mixable = require('mixable-object')
 
 ###*
  * Register.
@@ -34,25 +34,8 @@ register = (root, names..., name) ->
     utils.walk(leaf, dir, name)
     return @
 
-###*
- * Extend with another register.
- *
- * @param {Object} lib another register
- * @param {String} ...names the attributes that will be merged.
- *
- * @return {this}
-###
-extend = (lib, names...) ->
-    for name in names
-        # TODO: throw
-        return if not lib[name]?
-        # Create an object if nothing is there.
-        @[name] = {} if not @[name]?
-        # But do not override.
-        mixin.call(@[name], lib[name]) if utils.isObject(@[name])
-    return @
-
-module.exports = {
+module.exports = proto = {
     register: register
-    extend: extend
+    # Powered with merge() but for historic reasons named extend().
+    extend: mixable.merge
 }

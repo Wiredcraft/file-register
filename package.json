@@ -1,6 +1,6 @@
 {
   "name": "file-register",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "(Node.js) The way we organize code: break into files and folders and map to an object.",
   "author": {
     "name": "Wiredcraft",

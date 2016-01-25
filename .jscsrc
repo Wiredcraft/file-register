@@ -1,0 +1,9 @@
+{
+  "disallowEmptyBlocks": false,
+  "disallowTrailingComma": true,
+  "preset": "airbnb",
+  "requirePaddingNewLinesAfterBlocks": false,
+  "requirePaddingNewLinesBeforeLineComments": false,
+  "requireTrailingComma": false,
+  "safeContextKeyword": ["self"]
+}

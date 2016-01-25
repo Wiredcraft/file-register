@@ -1,4 +1,4 @@
 // Some tools.
 module.exports = {
-    lorem: function() {}
+  lorem: function() {}
 };

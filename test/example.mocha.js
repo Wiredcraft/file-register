@@ -11,6 +11,7 @@ describe('The example:', function () {
 
     // It is a map reflecting the file structure.
     example.should.be.type('object');
+    Object.keys(example).should.deepEqual(['models', 'utils', 'views']);
 
     // The key is the filename and value is what the file exports.
     example.should.have.property('utils').with.type('object');
@@ -19,6 +20,7 @@ describe('The example:', function () {
     // Nested directories are registered recursively.
     example.should.have.property('models').with.type('object');
     example.models.should.have.property('User').with.type('function');
+    Object.keys(example.models).should.deepEqual(['User']);
 
     // Things are handled with `require()` so a directory with an index
     // becomes whatever the index exports.
@@ -35,8 +37,10 @@ describe('Use the class:', function () {
 
     // It does the same thing as above.
     example.should.be.type('object');
+    Object.keys(example).should.deepEqual(['models', 'utils', 'views']);
     example.should.have.property('models').with.type('object');
     example.models.should.have.property('User').with.type('function');
+    Object.keys(example.models).should.deepEqual(['User']);
     example.should.have.property('views').with.type('string');
     example.should.have.property('utils').with.type('object');
     example.utils.should.have.property('lorem').with.type('function');

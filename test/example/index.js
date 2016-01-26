@@ -3,10 +3,16 @@ var mixable = require('mixable-object');
 var Register = require('../../');
 
 // The example.
-var example = mixable({});
+function Example() {
+  // Does many cool things.
+}
 
 // Use the prototype.
-example.mixin(Register.proto);
+mixable(Example);
+Example.prototype.mixin(Register.proto);
+
+// Instance.
+var example = new Example();
 
 // Register files.
 example.register(path.resolve(__dirname, 'lib'));

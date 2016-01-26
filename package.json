@@ -25,14 +25,14 @@
   "homepage": "https://github.com/Wiredcraft/file-register",
   "dependencies": {
     "debug": "^2.2.0",
-    "mixable-object": "^0.0.3",
+    "mixable-object": "^0.1.0",
     "sliced": "^1.0.1"
   },
   "devDependencies": {
     "benchmark": "^2.0.0",
     "coveralls": "^2.11.0",
     "istanbul": "^0.4.0",
-    "jscs": "^2.8.0",
+    "jscs": "^2.9.0",
     "mocha": "^2.3.0",
     "should": "^8.2.0"
   },

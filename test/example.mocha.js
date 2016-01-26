@@ -4,9 +4,9 @@ var should = require('should');
 var path = require('path');
 var Register = require('../');
 
-describe('The example:', function() {
+describe('The example:', function () {
 
-  it('should work', function() {
+  it('should work', function () {
     var example = require('./example');
 
     // It is a map reflecting the file structure.
@@ -27,9 +27,9 @@ describe('The example:', function() {
 
 });
 
-describe('Use the class:', function() {
+describe('Use the class:', function () {
 
-  it('should work', function() {
+  it('should work', function () {
     var example = new Register();
     example.register(path.resolve(__dirname, 'example/lib'));
 
@@ -44,9 +44,9 @@ describe('Use the class:', function() {
 
 });
 
-describe('Put everything in lib:', function() {
+describe('Put everything in lib:', function () {
 
-  it('should work', function() {
+  it('should work', function () {
     var example = new Register();
 
     // Any argument after the path will be used as 2 things: 1) the path
@@ -66,9 +66,9 @@ describe('Put everything in lib:', function() {
 
 });
 
-describe('Register one thing:', function() {
+describe('Register one thing:', function () {
 
-  it('should work', function() {
+  it('should work', function () {
     var example = new Register();
 
     // If you only want one of the things.
@@ -85,9 +85,9 @@ describe('Register one thing:', function() {
 
 });
 
-describe('Register one thing and put it in lib:', function() {
+describe('Register one thing and put it in lib:', function () {
 
-  it('should work', function() {
+  it('should work', function () {
     var example = new Register();
 
     // Things can also be nested.
@@ -107,16 +107,16 @@ describe('Register one thing and put it in lib:', function() {
 
 });
 
-describe('Extend with another register:', function() {
+describe('Extend with another register:', function () {
 
-  it('should work', function() {
+  it('should work', function () {
     var example = new Register();
     var another = new Register();
     another.register(path.resolve(__dirname, 'example/lib'));
 
     // Say example already has something.
     example.models = {
-      Data: function() {}
+      Data: function () {}
     };
 
     // Extend.
@@ -134,16 +134,16 @@ describe('Extend with another register:', function() {
 
 });
 
-describe('Selectively extend with another register:', function() {
+describe('Selectively extend with another register:', function () {
 
-  it('should work', function() {
+  it('should work', function () {
     var example = new Register();
     var another = new Register();
     another.register(path.resolve(__dirname, 'example/lib'));
 
     // Say example already has something.
     example.models = {
-      Data: function() {}
+      Data: function () {}
     };
 
     // Extend.

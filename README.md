@@ -68,3 +68,15 @@ example.lib.models.should.have.property('User').with.type('function');
 
 - `test/example/`
 - `test/example.mocha.js`
+
+## Git summary
+
+```
+ project  : file-register
+ repo age : 1 year, 1 month
+ active   : 7 days
+ commits  : 18
+ files    : 17
+ authors  :
+    18  Makara Wang  100.0%
+```

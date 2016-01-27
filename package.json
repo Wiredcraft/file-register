@@ -25,8 +25,7 @@
   "homepage": "https://github.com/Wiredcraft/file-register",
   "dependencies": {
     "debug": "^2.2.0",
-    "mixable-object": "^0.1.0",
-    "sliced": "^1.0.1"
+    "mixable-object": "^0.1.1"
   },
   "devDependencies": {
     "benchmark": "^2.0.0",
